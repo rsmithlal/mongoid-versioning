@@ -140,7 +140,7 @@ module Mongoid
 
       _loading_revision do
         self.class.unscoped
-          .with(options)
+          .with(options) {}
           .where(_id: id)
           .any_of({ version: version }, version: nil).first
       end
